@@ -1,5 +1,6 @@
 import cv2 as cv
 
+
 cap = cv.VideoCapture(0)
 if not cap.isOpened():
     print("Cannot open the camera")
@@ -20,3 +21,4 @@ while True :
 
 cap.release()
 cv.destroyAllWindows()
+
