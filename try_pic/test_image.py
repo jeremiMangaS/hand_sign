@@ -5,7 +5,7 @@ from mediapipe.tasks import python
 from mediapipe.tasks.python import vision
 
 #path
-model_path = "model/hand_landmarker.task"
+model_path = "../model/hand_landmarker.task"
 photo_path = "photo/image.jpg"
 
 
