@@ -5,7 +5,7 @@ cap = cv.VideoCapture(0)
 if not cap.isOpened():
     print("Cannot open the camera")
     exit()
-while True :
+while cap.isOpened() :
     ret, frame = cap.read()
     if not ret :
         print("Can't receive frame (stream end?), Exiting ...")
