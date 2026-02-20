@@ -27,7 +27,7 @@ options = HandLandmarkerOptions(
     base_options=BaseOptions,
     running_mode=VisionRunningMode.LIVE_STREAM, 
     result_callback=print_result,
-    num_hands=2
+    num_hands=1
 )
 
 
@@ -62,11 +62,21 @@ def start_engine() :
             
 
                             # ---------------------------------- [ LOGIC ] ----------------------------------------------
+                            hand_command = None
+                            fngrs_obj = logic.HandGesture()
 
                             for hand_landmark in result_container.hand_landmarks : 
-                                fngr = logic.HandGesture.fngrs_status(hand_landmark)
-                                command = logic.HandGesture.command_status(fngr)
-                                print(f"command : {command}")
+                                # fngrs = logic.HandGesture.fngrs_status(hand_landmark)
+                                # command = logic.HandGesture.co    mmand_status(fngrs_obj, fngrs)
+                                fngrs = fngrs_obj.fngrs_status(hand_landmark)
+                                command = fngrs_obj.command_status(fngrs)
+                                # print(f"command : {command}")
+                                hand_command = command
+                                print(hand_command)
+
+                            #
+
+                            # testing
 
                             # -------------------------------------------------------------------------------------------
             

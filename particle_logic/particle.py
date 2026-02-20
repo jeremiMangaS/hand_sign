@@ -12,7 +12,7 @@ class Particle :
         self.velocity = pygame.Vector2(random.uniform(-3, 3), 
                                        random.uniform(-3, 3))
         # self.life_c = [70, 100]
-        self.life_c = random.randint(1400, 1600)
+        self.life_c = random.randint(400, 800)
         self.color = [255, 255, 255]
         self.radius = random.randint(3, 5)
 
