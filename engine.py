@@ -1,6 +1,7 @@
 import cv2 as cv
 import mediapipe as mp
 import time
+import shared_status
 
 import logic
 # from logic import fngrs_status
@@ -35,7 +36,7 @@ options = HandLandmarkerOptions(
 def start_engine() : 
     cap = cv.VideoCapture(0)
     with HandLandmarker.create_from_options(options) as landmarker :
-        while cap.isOpened() :
+        while cap.isOpened() and shared_status.running :
             ret, frame = cap.read()
             
             if not ret : 
@@ -76,6 +77,8 @@ def start_engine() :
 
                             #
 
+                            shared_status.current_command = command
+
                             # testing
 
                             # -------------------------------------------------------------------------------------------
@@ -84,6 +87,7 @@ def start_engine() :
 
             
             if cv.waitKey(1) == ord('q') :
+                shared_status.running = False
                 break
 
     cap.release()

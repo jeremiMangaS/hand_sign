@@ -1,6 +1,7 @@
 import pygame
 # import main_tab.particle as particle
 import particle_logic.particle as particle
+import shared_status
 # import random
 
 # window shape
@@ -19,14 +20,12 @@ screen = pygame.display.set_mode((W_WIDTH, W_HWIGHT))
 pygame.display.set_caption('main tab')
 clock = pygame.time.Clock()
 
-def start_tab() :
-    running = True
-
+def start_tab() :   
     # main loop
-    while running :
+    while shared_status.running :
         for event in pygame.event.get() : 
             if event.type == pygame.QUIT :  
-                running = False
+                shared_status.running = False
             
         screen.fill("black") # cleaner
 
