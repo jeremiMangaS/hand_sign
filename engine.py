@@ -73,7 +73,7 @@ def start_engine() :
                                 command = fngrs_obj.command_status(fngrs)
                                 # print(f"command : {command}")
                                 hand_command = command
-                                print(hand_command)
+                                # print(hand_command)
 
                             #
 
